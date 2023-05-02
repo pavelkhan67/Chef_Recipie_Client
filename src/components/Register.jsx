@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
+    const [error, setError] = useState('');
 
     const handleRegister = event => {
         event.preventDefault();
@@ -12,12 +13,18 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(name, email, password);
+        // console.log(name, email, password);
+
+        if(!/.{6,}/.test(password)){
+            setError("Minimum six characters");
+            return;
+        }
 
         createUser(email, password)
         .then(result => {
             const loggedUser = result.user;
-            console.log(loggedUser);
+            // console.log(loggedUser);
+            setError('')
             form.reset();
         })
         .catch(error => {
@@ -58,6 +65,7 @@ const Register = () => {
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
+                    <p className='text-error pb-5'>{error}</p>
                 </div>
             </div>
         </div>

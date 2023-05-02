@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
     const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext); 
-
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    
     const handleLogin = event => {
         event.preventDefault();
 
@@ -13,10 +15,17 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
+        setError('');
+        setSuccess('');
+
         signIn(email, password)
         .then(result => {
             const loggedUser = result.user;
-            console.log(loggedUser);
+            if(loggedUser.email != email){
+                setError("Your email is not Verified, Please verify your email.");
+                return;
+            }
+            setSuccess('User login Successful.')
             form.reset();
         })
         .catch(error => {
@@ -75,7 +84,8 @@ const Login = () => {
                         <button onClick={handleGithubSignIn} className="btn btn-primary">Sign In with Github</button>
                     </form>
                 </div>
-                
+                <p className='text-error'>{error}</p>
+            <p className='text-success'>{success}</p>
             </div>
         </div>
     );
