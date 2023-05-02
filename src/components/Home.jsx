@@ -14,7 +14,7 @@ const Home = () => {
             <div className="hero-content text-center text-neutral-content ">
                 <div className="max-w-md py-40">
                     <h1 className="mb-5 text-5xl font-bold">Hello Gastronome</h1>
-                    <p className="mb-5">“We welcome you to a delicious feast of exquisite dishes in Star line. With a wide range of world cuisines to choose from, we guarantee you a sumptuous feast experience in our restaurant.”</p>
+                    <p className="mb-5 text-lg font-semibold italic text-slate-300">“We welcome you to a delicious feast of exquisite dishes in Star line. With a wide range of world cuisines to choose from, we guarantee you a sumptuous feast experience in our restaurant.”</p>
                 </div>
             </div>
         </div>
