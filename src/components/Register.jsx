@@ -12,9 +12,7 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const photo = form.photo.value;
-
-        // console.log(name, email, password);
+        // const photo = form.photo.value;
 
         if (!/.{6,}/.test(password)) {
             setError("Minimum six characters");
@@ -24,7 +22,6 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                // console.log(loggedUser);
                 setError('')
                 form.reset();
             })

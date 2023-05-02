@@ -22,7 +22,6 @@ const Header = () => {
             <div className=' flex gap-4 text-purple-900'>
                 <Link to="/">Home</Link>
                 <Link to="/blog">Blog</Link>
-                {user && <Link to="/profile">Profile</Link>}
             </div>
             <div>
                 {
