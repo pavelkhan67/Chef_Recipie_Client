@@ -1,8 +1,7 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Chef = ({ singleChef }) => {
-    console.log(singleChef);
     const {id, chef_bio, chef_name, chef_picture, likes, num_of_recipes, recipes, years_of_experience } = singleChef;
     return (
         <div className="card w-full bg-base-200 shadow-xl">
@@ -15,7 +14,7 @@ const Chef = ({ singleChef }) => {
                 <p>Number of Recipes: {num_of_recipes}</p>
                 <p>Likes: {likes}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary">View Recipes</button>
+                    <Link to={`/chef/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
                 </div>
             </div>
         </div>

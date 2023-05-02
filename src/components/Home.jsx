@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
     const chef = useLoaderData();
-    console.log(chef);
+    // console.log(chef);
 
     const imgURL ="https://cdn.squaremeal.co.uk/article/9484/images/healthy-london-ve-kitchen_01122021110525.jpg?w=1200";
     return (

@@ -9,6 +9,8 @@ import AuthProvider from './provider/AuthProvider';
 import Login from './components/Login';
 import Register from './components/Register';
 import Chef from './components/Chef';
+import ChefDetails from './components/ChefDetails';
+import PrivateRoute from './routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch(`http://localhost:5000/chef`)
+        loader: () => fetch(`http://localhost:5000/chef`),
       },
       {
         path: "/login",
@@ -29,8 +31,17 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>
       },
+      {
+        path: "/chef/:id",
+        element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
+        
+      }
     ],
+    
   },
+  
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
