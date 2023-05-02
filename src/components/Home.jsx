@@ -9,7 +9,7 @@ const Home = () => {
     const imgURL ="https://cdn.squaremeal.co.uk/article/9484/images/healthy-london-ve-kitchen_01122021110525.jpg?w=1200";
     return (
         <>
-        <div className="hero min-h-fit" style={{ backgroundImage: `url(${imgURL})` }}>
+        <div className="hero min-h-fit mb-5" style={{ backgroundImage: `url(${imgURL})` }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content ">
                 <div className="max-w-md py-40">
@@ -19,9 +19,9 @@ const Home = () => {
             </div>
         </div>
 
-        <div>
+        <div className='grid lg:grid-cols-3 gap-5'>
             {
-                chef.map(singleChef => <Chef key={singleChef.id}>singleChef={singleChef}</Chef>)
+                chef.map(singleChef => <Chef key={singleChef.id} singleChef={singleChef}></Chef>)
             }
         </div>
         </>
