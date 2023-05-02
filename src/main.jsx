@@ -8,6 +8,7 @@ import Home from './components/Home';
 import AuthProvider from './provider/AuthProvider';
 import Login from './components/Login';
 import Register from './components/Register';
+import Chef from './components/Chef';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch(`http://localhost:5000/chef`)
       },
       {
         path: "/login",

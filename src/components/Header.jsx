@@ -6,12 +6,12 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
-        .then(()=> {
+            .then(() => {
 
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -22,17 +22,17 @@ const Header = () => {
             <div className=' flex gap-4 text-purple-900'>
                 <Link to="/">Home</Link>
                 <Link to="/blog">Blog</Link>
-                { user && <Link to="/profile">Profile</Link>}
+                {user && <Link to="/profile">Profile</Link>}
             </div>
             <div>
                 {
                     user ? <><label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                      <img src={user?.photoURL}/>
-                    </div>
-                  </label>
+                        <div className="w-10 rounded-full" >
+                            <img src={user?.photoURL} />
+                        </div>
+                    </label>
                         <button onClick={handleLogOut} className='btn btn-xs ms-3 rounded-full'>Sign Out</button>
-                    </> : <> <Link to ="/login"><button className='btn btn-sm'>Login</button></Link> </>
+                    </> : <> <Link to="/login"><button className='btn btn-sm'>Login</button></Link> </>
                 }
             </div>
         </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
     const [error, setError] = useState('');
 
     const handleRegister = event => {
@@ -12,24 +12,25 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        const photo = form.photo.value;
 
         // console.log(name, email, password);
 
-        if(!/.{6,}/.test(password)){
+        if (!/.{6,}/.test(password)) {
             setError("Minimum six characters");
             return;
         }
 
         createUser(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            // console.log(loggedUser);
-            setError('')
-            form.reset();
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                // console.log(loggedUser);
+                setError('')
+                form.reset();
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -57,6 +58,12 @@ const Register = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo URL</span>
+                            </label>
+                            <input type="text" name='photo' placeholder="Photo" className="input input-bordered" />
                             <label className="label">
                                 <p className='text-sm text-left'>Already have an account? <Link to="/login" className="link link-hover text-blue-700">Login</Link></p>
                             </label>
