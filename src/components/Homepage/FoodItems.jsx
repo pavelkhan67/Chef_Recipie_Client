@@ -1,3 +1,5 @@
+import { faArrowCircleRight, faBowlFood } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 const FoodItems = () => {
@@ -44,7 +46,9 @@ const FoodItems = () => {
                                 </div>
                             </div>
                         </div>
-                        
+                    </div>
+                    <div className='text-right mt-5'>
+                        <button className='btn btn-primary'>Show More <FontAwesomeIcon className='ps-3 h-5' icon={faArrowCircleRight} /></button>
                     </div>
                 </div>
             </div>

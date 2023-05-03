@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const Register = () => {
 
 
         if (!/.{6,}/.test(password)) {
-            setError("Minimum six characters");
+            setError("Pass: Minimum six characters");
             return;
         }
 
@@ -27,6 +28,7 @@ const Register = () => {
                 setError('')
                 form.reset();
                 updateUserData(createdUser, name, photo)
+                toast("User Created Successful")
             })
             .catch(error => {
                 console.log(error);
@@ -47,7 +49,7 @@ const Register = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-100 mt-5">
             <div className="hero-content flex-col ">
                 <div className="text-center pt-5 pb-1">
                     <h1 className="text-5xl font-bold">Please Register !</h1>
@@ -78,7 +80,7 @@ const Register = () => {
                             </label>
                             <input type="text" name='photo' placeholder="Photo" className="input input-bordered" />
                             <label className="label">
-                                <p className='text-sm text-left'>Already have an account? <Link to="/login" className="link link-hover text-blue-700">Login</Link></p>
+                                <p className='text-sm text-left'>Already have an account? <Link to="/login" className="link link-hover text-blue-500">Login</Link></p>
                             </label>
                         </div>
                         <div className="form-control mt-6">
