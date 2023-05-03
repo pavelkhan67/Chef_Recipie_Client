@@ -1,18 +1,19 @@
 import { faArrowCircleRight, faBowlFood } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 
 const FoodItems = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
-                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80" className="max-w-sm w-full rounded-lg shadow-2xl" />
+                <LazyLoad><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80" className="max-w-sm w-full rounded-lg shadow-2xl" /></LazyLoad>
                 <div className='text-left'>
                     <h1 className="text-4xl font-bold">Items Available in our Cafe!</h1>
                     <div className='grid lg:grid-cols-3 gap-3 mt-5'>
                         <div className="card w-full bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
-                                <img src="https://iamafoodblog.b-cdn.net/wp-content/uploads/2019/07/kung-pao-chicken-5660w.jpg" alt="Shoes" className="rounded-xl" />
+                                <LazyLoad><img src="https://iamafoodblog.b-cdn.net/wp-content/uploads/2019/07/kung-pao-chicken-5660w.jpg" alt="Food" className="rounded-xl" /></LazyLoad>
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">Kung Pao Chicken</h2>
@@ -24,7 +25,7 @@ const FoodItems = () => {
                         </div>
                         <div className="card w-full bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
-                                <img src="https://img.taste.com.au/KQvIuV_Z/taste/2021/04/creamy-chicken-tetrazzini-170487-2.jpg" alt="Shoes" className="rounded-xl" />
+                                <LazyLoad><img src="https://img.taste.com.au/KQvIuV_Z/taste/2021/04/creamy-chicken-tetrazzini-170487-2.jpg" alt="Food" className="rounded-xl" /></LazyLoad>
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">Chicken Tetrazzini</h2>
@@ -36,7 +37,7 @@ const FoodItems = () => {
                         </div>
                         <div className="card w-full bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
-                                <img src="https://www.thespruceeats.com/thmb/DRaBINVopeoHOpjJn66Yh7pMBSc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-caesar-salad-recipe-996054-Hero_01-33c94cc8b8e841ee8f2a815816a0af95.jpg" alt="Shoes" className="rounded-xl" />
+                                <LazyLoad><img src="https://www.thespruceeats.com/thmb/DRaBINVopeoHOpjJn66Yh7pMBSc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-caesar-salad-recipe-996054-Hero_01-33c94cc8b8e841ee8f2a815816a0af95.jpg" alt="Food" className="rounded-xl" /></LazyLoad>
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">Caesar Salad</h2>

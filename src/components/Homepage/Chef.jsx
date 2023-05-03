@@ -1,6 +1,7 @@
 import { faBowlFood } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 import { Link} from 'react-router-dom';
 
 const Chef = ({ singleChef }) => {
@@ -8,7 +9,7 @@ const Chef = ({ singleChef }) => {
     return (
         <div className="card w-full bg-base-200 shadow-xl">
             <figure className="px-10 pt-10">
-                <img src={chef_picture} alt="" className='rounded-xl h-40 w-60' />
+                <LazyLoad ><img src={chef_picture} alt="" className='rounded-xl h-40 w-60' /></LazyLoad>
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{chef_name}</h2>

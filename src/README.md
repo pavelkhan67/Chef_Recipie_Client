@@ -5,9 +5,9 @@
 ---
 
 ## Live Link
-Hosted in Netlify -> [LinkUp](https://candid-custard-e2353e.netlify.app/)
+Hosted in Firebase -> [Savoury cafe](https://chef-recipie.web.app)
 
-Link: https://candid-custard-e2353e.netlify.app/
+Link: https://chef-recipie.web.app
 
 --- 
 ## Features of My Project :-

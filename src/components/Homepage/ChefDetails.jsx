@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipeDetails from './RecipeDetails';
+import LazyLoad from 'react-lazy-load';
 
 
 const ChefDetails = () => {
@@ -11,7 +12,7 @@ const ChefDetails = () => {
         <>
             <div className="hero py-28 bg-base-200 shadow-2xl mt-5">
                 <div className="hero-content flex-col lg:flex-row px-20">
-                    <img className='h-60 rounded-lg' src={chef_picture} />
+                    <img className='h-72 w-56 rounded-lg' src={chef_picture} />
                     <div className='text-left lg:ps-10'>
                         <h1 className="text-4xl font-bold">{chef_name}</h1>
                         <p className="py-2">{chef_bio}</p>
