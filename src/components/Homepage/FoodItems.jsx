@@ -7,7 +7,7 @@ const FoodItems = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
-                <LazyLoad><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80" className="max-w-sm w-full rounded-lg shadow-2xl" /></LazyLoad>
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80" className="max-w-sm w-full rounded-lg shadow-2xl" />
                 <div className='text-left'>
                     <h1 className="text-4xl font-bold">Items Available in our Cafe!</h1>
                     <div className='grid lg:grid-cols-3 gap-3 mt-5'>
