@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipeDetails from './RecipeDetails';
 
+
 const ChefDetails = () => {
     const details = useLoaderData();
     const { chef_bio, chef_name, chef_picture, likes, num_of_recipes, recipes, years_of_experience } = details;

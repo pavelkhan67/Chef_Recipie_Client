@@ -4,14 +4,13 @@ import ErrorPage from "./error-page";
 import './index.css'
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import App from './App';
-import Home from './components/Home';
 import AuthProvider from './provider/AuthProvider';
 import Login from './components/Login';
 import Register from './components/Register';
-import Chef from './components/Chef';
-import ChefDetails from './components/ChefDetails';
+import ChefDetails from './components/Homepage/ChefDetails';
 import PrivateRoute from './routes/PrivateRoute';
 import Blog from './components/Blog';
+import Home from './components/Homepage/Home';
 
 const router = createBrowserRouter([
   {
