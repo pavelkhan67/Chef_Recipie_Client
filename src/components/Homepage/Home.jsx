@@ -8,9 +8,9 @@ const Home = () => {
     const chef = useLoaderData();
     // console.log(chef);
 
-    const imgURL1 = "https://assets.cntraveller.in/photos/60ba14e8bfe773a828a467fd/master/pass/koko-food-1366x768.jpg";
-    const imgURL3 = "https://cdn.squaremeal.co.uk/article/9484/images/healthy-london-ve-kitchen_01122021110525.jpg?w=1200";
-    const imgURL2 = "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?cs=srgb&dl=pexels-chan-walrus-958545.jpg&fm=jpg";
+    const imgURL1 = "https://b.zmtcdn.com/data/pictures/6/19752516/4843a7ae4f5b09939e08a2f6b4d2d325.jpg?fit=around|750:500&crop=750:500;*,*";
+    const imgURL3 = "https://publish.purewow.net/wp-content/uploads/sites/2/2022/01/healthy-restaurants-in-la-fb.jpg";
+    const imgURL2 = "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudCUyMGZvb2R8ZW58MHx8MHx8&w=1000&q=80";
     
     return (
         <>

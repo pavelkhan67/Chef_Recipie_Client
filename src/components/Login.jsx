@@ -86,11 +86,11 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary normal-case text-base">Login</button>
                         </div>
+                        <p className='text-error'>{error}</p>
                     </form>
                 </div>
                 <button onClick={handleGoogleSignIn} className="btn btn-primary w-full normal-case text-base"> <img className='h-6' src="https://www.svgrepo.com/show/327365/logo-google.svg" alt="" /> <span className='ps-5'>Sign In with Google</span></button>
                 <button onClick={handleGithubSignIn} className="btn btn-primary w-full normal-case text-base"><img className='h-6' src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="" /> <span className='ps-5'>Sign In with Github</span></button>
-                <p className='text-error'>{error}</p>
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
@@ -7,6 +7,8 @@ import { toast } from 'react-toastify';
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const from =  '/'
 
     const handleRegister = event => {
         event.preventDefault();
@@ -28,6 +30,7 @@ const Register = () => {
                 setError('')
                 form.reset();
                 updateUserData(createdUser, name, photo)
+                navigate(from, { replace: true })
                 toast("User Created Successful")
             })
             .catch(error => {
