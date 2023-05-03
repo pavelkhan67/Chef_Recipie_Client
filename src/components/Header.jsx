@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Header = () => {
@@ -15,23 +15,26 @@ const Header = () => {
     }
 
     return (
-        <div className="navbar bg-indigo-200 flex justify-between">
+        <div className="navbar bg-base-200 flex justify-between">
             <div>
-                <a className="btn btn-ghost normal-case text-xl">Savoury Cafe</a>
+                <Link to="/" className="btn btn-ghost normal-case text-xl">Savoury Cafe</Link>
             </div>
-            <div className=' flex gap-4 text-purple-900'>
-                <Link to="/">Home</Link>
-                <Link to="/blog">Blog</Link>
+            <div className=' flex gap-4 '>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/blog">Blog</NavLink>
             </div>
             <div>
                 {
-                    user ? <><label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full" >
-                            <img src={user?.photoURL} />
+                    user ? <>
+                        <div className="tooltip tooltip-left" data-tip={user.displayName}>
+                            <button><label className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full" >
+                                    <img src={user?.photoURL} />
+                                </div>
+                            </label></button>
                         </div>
-                    </label>
                         <button onClick={handleLogOut} className='btn btn-xs ms-3 rounded-full'>Sign Out</button>
-                    </> : <> <Link to="/login"><button className='btn btn-sm'>Login</button></Link> </>
+                    </> : <> <NavLink to="/login"><button className='btn btn-circle w-16 btn-primary'>Login</button></NavLink> </>
                 }
             </div>
         </div>

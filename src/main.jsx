@@ -11,6 +11,7 @@ import Register from './components/Register';
 import Chef from './components/Chef';
 import ChefDetails from './components/ChefDetails';
 import PrivateRoute from './routes/PrivateRoute';
+import Blog from './components/Blog';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
       },
       {
         path: "/chef/:id",

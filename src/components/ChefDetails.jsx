@@ -8,7 +8,7 @@ const ChefDetails = () => {
     // console.log(data);
     return (
         <>
-            <div className="hero py-28 bg-base-200 shadow-2xl">
+            <div className="hero py-28 bg-base-200 shadow-2xl mt-5">
                 <div className="hero-content flex-col lg:flex-row px-20">
                     <img className='h-60 rounded-lg' src={chef_picture} />
                     <div className='text-left ps-10'>
@@ -20,7 +20,7 @@ const ChefDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex gap-5 px-5 pt-5'>
+            <div className=' lg:flex gap-5 px-5 pt-5'>
             {
                 recipes.map(recipes => <RecipeDetails key={recipes.recipe_id} recipes={recipes}></RecipeDetails>)
             }

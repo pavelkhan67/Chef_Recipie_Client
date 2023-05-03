@@ -1,3 +1,5 @@
+import { faBowlFood } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link} from 'react-router-dom';
 
@@ -14,7 +16,7 @@ const Chef = ({ singleChef }) => {
                 <p>Number of Recipes: {num_of_recipes}</p>
                 <p>Likes: {likes}</p>
                 <div className="card-actions">
-                    <Link to={`/chef/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
+                    <Link to={`/chef/${id}`}><button className="btn btn-primary"><span className='pr-2 text-white'>View Recipes</span> <FontAwesomeIcon className='text-red-500 h-5' icon={faBowlFood} /> </button></Link>
                 </div>
             </div>
         </div>

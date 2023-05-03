@@ -1,17 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-    const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext); 
+    const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
     const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location)
-    const from = location.state?.from?.pathname || '/category/0'
-    
+    // console.log('login page location', location)
+    const from = location.state?.from?.pathname || '/'
+
+
     const handleLogin = event => {
         event.preventDefault();
 
@@ -20,40 +21,37 @@ const Login = () => {
         const password = form.password.value;
 
         setError('');
-        setSuccess('');
 
         signIn(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            navigate(from, { replace: true })
-            if(loggedUser.email != email){
-                setError("Email, Password Invalid.");
-                return;
-            }
-            setSuccess('User login Successful.')
-            form.reset();
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                navigate(from, { replace: true })
+                toast('User LogIn Successful')
+                form.reset();
+            })
+            .catch(error => {
+                console.log(error);
+            })
 
     }
 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(result => {
-            const loggedUser = result.user;
-            navigate(from, { replace: true })
-        })
-        .catch(error => console.log(error))
+            .then(result => {
+                const loggedUser = result.user;
+                navigate(from, { replace: true })
+                toast('User LogIn Successful')
+            })
+            .catch(error => console.log(error))
     }
-    const handleGithubSignIn = () =>{
+    const handleGithubSignIn = () => {
         githubSignIn()
-        .then(result => {
-            const loggedUser = result.user;
-            navigate(from, { replace: true })
-        })
-        .catch(error => console.log(error))
+            .then(result => {
+                const loggedUser = result.user;
+                navigate(from, { replace: true })
+                toast('User LogIn Successful')
+            })
+            .catch(error => console.log(error))
     }
 
     return (
@@ -85,12 +83,11 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
-                        <button onClick={handleGoogleSignIn} className="btn btn-primary">Sign In with Google</button>
-                        <button onClick={handleGithubSignIn} className="btn btn-primary">Sign In with Github</button>
                     </form>
                 </div>
+                <button onClick={handleGoogleSignIn} className="btn btn-primary w-full"> <img className='h-6' src="https://www.svgrepo.com/show/327365/logo-google.svg" alt="" /> <span className='ps-5'>Sign In with Google</span></button>
+                <button onClick={handleGithubSignIn} className="btn btn-primary w-full"><img className='h-6' src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="" /> <span className='ps-5'>Sign In with Github</span></button>
                 <p className='text-error'>{error}</p>
-            <p className='text-success'>{success}</p>
             </div>
         </div>
     );

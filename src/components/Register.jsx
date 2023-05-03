@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -12,7 +13,8 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        // const photo = form.photo.value;
+        const photo = form.photo.value;
+
 
         if (!/.{6,}/.test(password)) {
             setError("Minimum six characters");
@@ -21,13 +23,27 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                const loggedUser = result.user;
+                const createdUser = result.user;
                 setError('')
                 form.reset();
+                updateUserData(createdUser, name, photo)
             })
             .catch(error => {
                 console.log(error);
             })
+    }
+
+    const updateUserData = (user, name, photo) => {
+        updateProfile(user, {
+            displayName : name,
+            photoURL: photo
+        })
+        .then(() => {
+            console.log("User name updated");
+        })
+        .catch(error => { 
+            setError(error.message)
+        })
     }
 
     return (
