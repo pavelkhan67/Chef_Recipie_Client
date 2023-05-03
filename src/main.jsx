@@ -7,10 +7,10 @@ import App from './App';
 import AuthProvider from './provider/AuthProvider';
 import Login from './components/Login';
 import Register from './components/Register';
-import ChefDetails from './components/Homepage/ChefDetails';
 import PrivateRoute from './routes/PrivateRoute';
 import Blog from './components/Blog';
 import Home from './components/Homepage/Home';
+import ChefDetails from './components/Homepage/ChefSection/ChefDetails';
 
 const router = createBrowserRouter([
   {

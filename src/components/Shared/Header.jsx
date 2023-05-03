@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <div className="navbar bg-base-200 flex justify-between">
             <div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl">Savoury Cafe</Link>
+                <Link to="/" className="btn btn-ghost normal-case font-bold text-xl">Savoury Cafe</Link>
             </div>
             <div className=' flex gap-4 '>
                 <NavLink to="/">Home</NavLink>
@@ -33,8 +33,8 @@ const Header = () => {
                                 </div>
                             </label></button>
                         </div>
-                        <button onClick={handleLogOut} className='btn btn-xs ms-3 rounded-full'>Sign Out</button>
-                    </> : <> <NavLink to="/login"><button className='btn btn-circle w-16 btn-primary'>Login</button></NavLink> </>
+                        <button onClick={handleLogOut} className='btn btn-sm ms-3 rounded-full normal-case text-sm'>Sign Out</button>
+                    </> : <> <NavLink to="/login"><button className='btn btn-circle w-16 btn-primary normal-case text-base'>Login</button></NavLink> </>
                 }
             </div>
         </div>

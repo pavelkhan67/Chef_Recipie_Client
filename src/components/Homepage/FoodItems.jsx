@@ -19,7 +19,7 @@ const FoodItems = () => {
                                 <h2 className="card-title">Kung Pao Chicken</h2>
                                 <p>This dish was named after the late Qing dynasty governor of Sichuan, Ding Baozhen. He loved the dish named ‘Gong Bao’ that got its new name after the governor’s title.</p>
                                 <div className="card-actions mt-2">
-                                    <button className="btn btn-primary btn-sm">View Shop to Order</button>
+                                    <button className="btn btn-primary btn-sm normal-case">View Shop to Order</button>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +31,7 @@ const FoodItems = () => {
                                 <h2 className="card-title">Chicken Tetrazzini</h2>
                                 <p>This tempting dish was crafted in San Francisco and was dedicated to the opera star Luisa Tetrazzini.In 1984, this dish was created out of kitchen’s remaining ingredients.</p>
                                 <div className="card-actions mt-2">
-                                    <button className="btn btn-primary btn-sm">View Shop to Order</button>
+                                    <button className="btn btn-primary btn-sm normal-case">View Shop to Order</button>
                                 </div>
                             </div>
                         </div>
@@ -43,13 +43,13 @@ const FoodItems = () => {
                                 <h2 className="card-title">Caesar Salad</h2>
                                 <p>An Italian immigrant, Caesar Cardini, who owned restaurants in the US and Mexico is actually the creator of this salad called ‘Caesar Salad’. In 1924, this dish was created out of kitchen’s remaining ingredients.</p>
                                 <div className="card-actions mt-2">
-                                    <button className="btn btn-primary btn-sm">View Shop to Order</button>
+                                    <button className="btn btn-primary btn-sm normal-case">View Shop to Order</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='text-right mt-5'>
-                        <button className='btn btn-primary'>Show More <FontAwesomeIcon className='ps-3 h-5' icon={faArrowCircleRight} /></button>
+                        <button className='btn btn-primary normal-case text-base'>Show More <FontAwesomeIcon className='ps-3 h-5' icon={faArrowCircleRight} /></button>
                     </div>
                 </div>
             </div>

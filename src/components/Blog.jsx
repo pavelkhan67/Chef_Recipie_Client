@@ -11,14 +11,14 @@ const Blog = () => {
     };
     return (
         <>
-            <div className='text-right mt-4 me-1'>
-                <Pdf targetRef={ref} filename="blog-Saviour-cafe.pdf" options={options} x={1} y={1} scale={1}>
+            <div className='text-right mt-4 w-11/12 mx-auto'>
+                <Pdf targetRef={ref} filename="blog-Saviour-cafe.pdf" options={options} x={1} y={1} scale={.8}>
                     {({ toPdf }) => (
-                        <button className='btn btn-primary' onClick={toPdf}>Generate pdf <FontAwesomeIcon className='ps-2' icon={faDownload} /></button>
+                        <button className='btn btn-primary normal-case text-base' onClick={toPdf}>Download pdf <FontAwesomeIcon className='ps-2' icon={faDownload} /></button>
                     )}
                 </Pdf>
             </div>
-            <div className=" bg-base-100 text-left w-11/12 mx-auto mt-5 grid lg:grid-cols-2 gap-5">
+            <div className=" bg-base-100 text-left w-11/12 mx-auto mt-5 grid lg:grid-cols-2 gap-5" ref={ref}>
                 <div className="card w-full bg-slate-50 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title">1. Tell us the differences between uncontrolled and controlled components.</h2>
@@ -52,18 +52,7 @@ const Blog = () => {
                             Custom React JS hooks offer reusability as when a custom hook is created, it can be reused easily, which makes the code cleaner and reduces the time to write the code. It also enhances the rendering speed of the code as a custom hook does not need to be rendered again and again while rendering the whole code.</p>
                     </div>
                 </div>
-
-                <div className='p-5 text-black bg-slate-100 rounded-lg text-left' style={{ width: 600, height: 300 }} ref={ref} >
-                    <p className='text-lg font-semibold'>Total Blog: 4</p>
-                    <p className='font-semibold py-2 underline'>Blogs Name:</p>
-                    <p className='ps-4'>
-                        1. Tell us the differences between uncontrolled and controlled components. <br />
-                        2. How to validate React props using PropTypes? <br />
-                        3. Tell us the difference between nodejs and express js. <br />
-                        4. What is a custom hook, and why will you create a custom hook?
-                    </p>  </div>
             </div>
-
         </>
     );
 };

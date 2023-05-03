@@ -17,7 +17,7 @@ const RecipeDetails = ({ recipes }) => {
                 <p className='pt-5'><span className='underline font-semibold'>Cooking Method: </span> <br />{cooking_method}</p>
                 <p className='pt-5'><span className='font-semibold'>Rating:</span> <FontAwesomeIcon className='text-orange-500' icon={faStar} /> {rating}</p>
                 <div className="card-actions justify-end">
-                    <button onClick={handleClick} className="btn btn-primary"><span className='pr-2 text-white'>Add To Favorite</span> <FontAwesomeIcon className='text-rose-500 h-5' icon={faHeart} /></button>
+                    <button onClick={handleClick} className="btn btn-primary text-base normal-case"><span className='pr-2'>Add To Favorite</span> <FontAwesomeIcon className='text-rose-500 h-5' icon={faHeart} /></button>
                 </div>
             </div>
         </div>

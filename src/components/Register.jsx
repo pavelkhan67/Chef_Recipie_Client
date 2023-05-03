@@ -41,7 +41,7 @@ const Register = () => {
             photoURL: photo
         })
         .then(() => {
-            console.log("User name updated");
+            console.log("User name, photo updated");
         })
         .catch(error => { 
             setError(error.message)

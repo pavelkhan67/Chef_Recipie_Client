@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import Chef from './Chef';
 import FoodItems from './FoodItems';
 import CustomerReview from './CustomerReview';
+import Chef from './ChefSection/Chef';
 
 const Home = () => {
     const chef = useLoaderData();
