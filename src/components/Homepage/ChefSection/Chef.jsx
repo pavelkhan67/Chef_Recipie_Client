@@ -1,4 +1,4 @@
-import { faBowlFood } from '@fortawesome/free-solid-svg-icons';
+import { faBowlFood, faCalendarAlt, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import LazyLoad from 'react-lazy-load';
@@ -13,9 +13,9 @@ const Chef = ({ singleChef }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{chef_name}</h2>
-                <p>Years of Experience: {years_of_experience}</p>
-                <p>Number of Recipes: {num_of_recipes}</p>
-                <p>Likes: {likes}</p>
+                <p>Years of Experience: <FontAwesomeIcon icon={faCalendarAlt} /> {years_of_experience}</p>
+                <p>Number of Recipes: <FontAwesomeIcon icon={faBowlFood} /> {num_of_recipes}</p>
+                <p>Likes: <FontAwesomeIcon icon={faThumbsUp} /> {likes}</p>
                 <div className="card-actions">
                     <Link to={`/chef/${id}`}><button className="btn btn-primary normal-case text-base"><span className='pr-2'>View Recipes</span> <FontAwesomeIcon className='text-rose-500 h-5' icon={faBowlFood} /> </button></Link>
                 </div>

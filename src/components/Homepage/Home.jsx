@@ -6,7 +6,7 @@ import Chef from './ChefSection/Chef';
 
 const Home = () => {
     const chef = useLoaderData();
-    // console.log(chef);
+    //  console.log(chef);
 
     const imgURL1 = "https://b.zmtcdn.com/data/pictures/6/19752516/4843a7ae4f5b09939e08a2f6b4d2d325.jpg?fit=around|750:500&crop=750:500;*,*";
     const imgURL3 = "https://publish.purewow.net/wp-content/uploads/sites/2/2022/01/healthy-restaurants-in-la-fb.jpg";

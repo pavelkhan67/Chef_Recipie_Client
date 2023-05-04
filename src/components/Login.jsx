@@ -25,7 +25,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 navigate(from, { replace: true })
-                toast('User LogIn Successful')
+                toast.success('User LogIn Successful!')
                 form.reset();
             })
             .catch(error => {
@@ -43,7 +43,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 navigate(from, { replace: true })
-                toast('User LogIn Successful')
+                toast.success('User LogIn with Google Successful!')
             })
             .catch(error => console.log(error))
     }
@@ -52,7 +52,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 navigate(from, { replace: true })
-                toast('User LogIn Successful')
+                toast.success('User LogIn with Github Successful!')
             })
             .catch(error => console.log(error))
     }
@@ -84,13 +84,13 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary normal-case text-base">Login</button>
+                            <button className="btn btn-primary normal-case text-base"> Login</button>
                         </div>
                         <p className='text-error'>{error}</p>
                     </form>
                 </div>
-                <button onClick={handleGoogleSignIn} className="btn btn-primary w-full normal-case text-base"> <img className='h-6' src="https://www.svgrepo.com/show/327365/logo-google.svg" alt="" /> <span className='ps-5'>Sign In with Google</span></button>
-                <button onClick={handleGithubSignIn} className="btn btn-primary w-full normal-case text-base"><img className='h-6' src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="" /> <span className='ps-5'>Sign In with Github</span></button>
+                <button onClick={handleGoogleSignIn} className="btn btn-primary w-full normal-case text-base"> <img className='h-6' src="https://cdn.iconscout.com/icon/free/png-256/free-google-329-437375.png" alt="" /> <span className='ps-5'>Sign In with Google</span></button>
+                <button onClick={handleGithubSignIn} className="btn btn-primary w-full normal-case text-base"><img className='h-9' src="https://logoeps.com/wp-content/uploads/2014/05/37318-github-logo-icon-vector-icon-vector-eps.png" alt="" /> <span className='ps-5'>Sign In with Github</span></button>
             </div>
         </div>
     );

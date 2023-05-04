@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipeDetails from './RecipeDetails';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 const ChefDetails = () => {
     const details = useLoaderData();
@@ -14,9 +16,9 @@ const ChefDetails = () => {
                     <div className='text-left lg:ps-10'>
                         <h1 className="text-4xl font-bold">{chef_name}</h1>
                         <p className="py-2">{chef_bio}</p>
-                        <p className="py-1">Total Recipe: {num_of_recipes}</p>
+                        <p className="py-1">Total Recipe: {num_of_recipes} </p>
                         <p className="py-1">Experience: {years_of_experience} year</p>
-                        <p className="py-1">Likes: {likes} </p>
+                        <p className="py-1">Likes: <FontAwesomeIcon icon={faThumbsUp} /> {likes} </p>
                     </div>
                 </div>
             </div>

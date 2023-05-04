@@ -5,10 +5,21 @@ import { updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    const from =  '/'
+    const from =  '/login'
 
     const handleRegister = event => {
         event.preventDefault();
@@ -30,8 +41,10 @@ const Register = () => {
                 setError('')
                 form.reset();
                 updateUserData(createdUser, name, photo)
+                handleLogOut()
                 navigate(from, { replace: true })
-                toast("User Created Successful")
+                toast.success("User Created Successful!")
+
             })
             .catch(error => {
                 console.log(error);
@@ -87,7 +100,7 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <button className="btn btn-primary"> Register</button>
                         </div>
                     </form>
                     <p className='text-error pb-5'>{error}</p>
