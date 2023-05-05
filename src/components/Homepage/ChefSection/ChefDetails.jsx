@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import RecipeDetails from './RecipeDetails';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import LazyLoad from 'react-lazy-load';
 
 const ChefDetails = () => {
     const details = useLoaderData();
@@ -12,7 +13,7 @@ const ChefDetails = () => {
         <>
             <div className="hero py-28 bg-base-200 shadow-2xl mt-5">
                 <div className="hero-content flex-col lg:flex-row px-10 lg:px-20">
-                    <img className='h-72 lg:w-56 rounded-lg' src={chef_picture} />
+                    <LazyLoad><img className='h-72 lg:w-56 rounded-lg' src={chef_picture} /></LazyLoad>
                     <div className='text-left lg:ps-10'>
                         <h1 className="text-4xl font-bold">{chef_name}</h1>
                         <p className="py-2">{chef_bio}</p>

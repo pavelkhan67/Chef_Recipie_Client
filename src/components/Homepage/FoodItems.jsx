@@ -1,7 +1,6 @@
 import { faArrowCircleRight, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import LazyLoad from 'react-lazy-load';
 
 const FoodItems = () => {
     return (
@@ -13,7 +12,7 @@ const FoodItems = () => {
                     <div className='grid lg:grid-cols-3 gap-3 mt-5'>
                         <div className="card w-full bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
-                                <LazyLoad><img src="https://www.kimscravings.com/wp-content/uploads/2022/08/Kungpaochicken_-13-500x500.jpg" alt="Food" className="rounded-xl" /></LazyLoad>
+                            <img src="https://www.kimscravings.com/wp-content/uploads/2022/08/Kungpaochicken_-13-500x500.jpg" alt="Food" className="rounded-xl" />
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">Kung Pao Chicken</h2>
@@ -25,7 +24,7 @@ const FoodItems = () => {
                         </div>
                         <div className="card w-full bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
-                                <LazyLoad><img src="https://www.theseasonedmom.com/wp-content/uploads/2022/08/Chicken-Tetrazzini-9-500x500.jpg" alt="Food" className="rounded-xl" /></LazyLoad>
+                            <img src="https://www.theseasonedmom.com/wp-content/uploads/2022/08/Chicken-Tetrazzini-9-500x500.jpg" alt="Food" className="rounded-xl" />
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">Chicken Tetrazzini</h2>
@@ -37,7 +36,7 @@ const FoodItems = () => {
                         </div>
                         <div className="card w-full bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
-                                <LazyLoad><img src="https://www.noracooks.com/wp-content/uploads/2022/06/vegan-caesar-salad-4-500x500.jpg" alt="Food" className="rounded-xl" /></LazyLoad>
+                            <img src="https://www.noracooks.com/wp-content/uploads/2022/06/vegan-caesar-salad-4-500x500.jpg" alt="Food" className="rounded-xl" />
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">Caesar Salad</h2>
